@@ -2,7 +2,7 @@
 """ 0-simple_helper_function """
 
 
-def index_range(page, page_size):
+def index_range(page: int, page_size: int) -> tuple:
     """Simple helper function.
 
     Args:

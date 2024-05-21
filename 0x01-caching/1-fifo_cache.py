@@ -22,9 +22,9 @@ class FIFOCache(BaseCaching):
         self.cache_data[key] = item
         if len(self.cache_data.items()) > BaseCaching.MAX_ITEMS:
             # discards the first item put in cache(FIFO algorithm)
-            first_item = next(iter(self.cache_data))
-            del self.cache_data[first_item]
-            print(f"DISCARD: {first_item}")
+            first_key = next(iter(self.cache_data))
+            del self.cache_data[first_key]
+            print(f"DISCARD: {first_key}")
 
     def get(self, key):
         """Get an item by key."""

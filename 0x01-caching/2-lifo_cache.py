@@ -22,7 +22,7 @@ class LIFOCache(BaseCaching):
             # Remove the old key to update its position in the order list
             if key in self.cache_data:
                 self.order.remove(key)
-            elif len(self.cache_data.items()) >= BaseCaching.MAX_ITEMS:
+            elif len(self.cache_data) > BaseCaching.MAX_ITEMS:
                 # Remove last item from the cache
                 last_key = self.order.pop()
                 del self.cache_data[last_key]

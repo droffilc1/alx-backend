@@ -20,7 +20,7 @@ class LFUCache(BaseCaching):
 
     def put(self, key, item):
         """Add an item to the cache."""
-        if key is None and item is None:
+        if key is None or item is None:
             return
         if key in self.cache_data:
             self.freq[key] += 1

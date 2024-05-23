@@ -18,6 +18,8 @@ class LIFOCache(BaseCaching):
 
     def put(self, key, item):
         """Add item in the cache."""
+        if key is None or item is None:
+            return
         if key is not None and item is not None:
             # Remove the old key to update its position in the order list
             if key in self.cache_data:

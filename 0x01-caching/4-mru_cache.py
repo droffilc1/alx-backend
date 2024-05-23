@@ -20,14 +20,14 @@ class MRUCache(BaseCaching):
         """Add an item to the cache."""
         if key is not None and item is not None:
             if key in self.cache_data:
-                self.order.move_to_end(key)
-            self.order[key] = item
-            self.cache_data[key] = item
-
-            if len(self.cache_data) > BaseCaching.MAX_ITEMS:
+                del self.order[key]
+            elif len(self.cache_data) >= BaseCaching.MAX_ITEMS:
                 most_used_key, _ = self.order.popitem(last=True)
                 del self.cache_data[most_used_key]
                 print(f"DISCARD: {most_used_key}")
+
+            self.order[key] = item
+            self.cache_data[key] = item
 
     def get(self, key):
         """Get an item by key."""

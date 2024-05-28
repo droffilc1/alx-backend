@@ -31,8 +31,7 @@ def get_locale():
 @app.route('/')
 def index():
     """Starts a Flask app."""
-    return render_template('3-index.html',
-                           locale=get_locale() or babel.default_locale)
+    return render_template('3-index.html')
 
 
 if __name__ == '__main__':

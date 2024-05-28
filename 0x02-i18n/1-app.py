@@ -14,7 +14,7 @@ class Config:
     """Configures available languages and time."""
     LANGUAGES = ['en', 'fr']
     BABEL_DEFAULT_LANGUAGE = 'en'
-    BABEL_DEFAULT_DATE = 'UTC'
+    BABEL_DEFAULT_TIMEZONE = 'UTC'
 
 
 app.config.from_object(Config)
@@ -24,3 +24,7 @@ app.config.from_object(Config)
 def index():
     """Starts a Flask app."""
     return render_template('1-index.html')
+
+
+if __name__ == '__main__':
+    app.run()

@@ -3,14 +3,24 @@
 Implements Basic Babel setup.
 """
 
-from flask import Flask
+from flask import Flask, render_template
 from flask_babel import Babel
 
 app = Flask(__name__)
-app.config['BABEL_DEFAULT_LANGUAGE'] = 'en'
-app.config['BABEL_DEFAULT_DATE'] = 'UTC'
 babel = Babel(app)
 
+
 class Config:
-    """Configures available languages."""
-    LANGUAGES=['en', 'fr']
+    """Configures available languages and time."""
+    LANGUAGES = ['en', 'fr']
+    BABEL_DEFAULT_LANGUAGE = 'en'
+    BABEL_DEFAULT_DATE = 'UTC'
+
+
+app.config.from_object(Config)
+
+
+@app.route('/')
+def index():
+    """Starts a Flask app."""
+    return render_template('1-index.html')

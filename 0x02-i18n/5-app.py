@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 """5-app
 Implements Basic Babel setup.
-Routes:
-        /: displays "Hello World!"
 """
 
 from flask import Flask, g, render_template, request

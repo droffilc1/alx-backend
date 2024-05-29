@@ -5,7 +5,7 @@ Routes:
         /: displays "Hello World!"
 """
 
-from flask import Flask, render_template, request, g
+from flask import Flask, g, render_template, request
 from flask_babel import Babel, _
 
 app = Flask(__name__)

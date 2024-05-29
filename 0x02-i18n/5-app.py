@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-"""5-app
-Implements Basic Babel setup.
-"""
+"""Implements Basic Babel setup."""
 
 from flask import Flask, g, render_template, request
 from flask_babel import Babel, _

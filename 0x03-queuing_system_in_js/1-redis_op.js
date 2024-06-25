@@ -16,14 +16,14 @@ const setNewSchool = (schoolName, value) => {
     if (err) throw err;
     redis.print(`Reply: ${reply}`);
   });
-}
+};
 
 const displaySchoolValue = (schoolName) => {
   client.get(schoolName, (err, reply) => {
     if (err) throw err;
     console.log(reply);
   });
-}
+};
 
 displaySchoolValue('Holberton');
 setNewSchool('HolbertonSanFrancisco', '100');

@@ -14,10 +14,7 @@ client.on('error', (err) => {
 
 promisify(setNewSchool);
 async function setNewSchool(schoolName, value) {
-  await client.set(schoolName, value, (err, reply) => {
-    if (err) throw err;
-    redis.print(`Reply: ${reply}`);
-  });
+  await client.set(schoolName, value, redis.print);
 }
 
 promisify(displaySchoolValue);

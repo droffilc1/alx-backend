@@ -1,6 +1,6 @@
 // Writing the job creation function
 const createPushNotificationsJobs = (jobs, queue) => {
-  if (!Array.from(jobs)) {
+  if (!Array.isArray(jobs)) {
     throw Error('Jobs is not an array');
   }
   jobs.forEach((jobData) => {
